@@ -1,0 +1,25 @@
+<header>
+    <div class="container">
+        <a class="logo" [routerLink]="['/']">
+            Bruno Lopes
+        </a>
+        <div class="modulos">
+            <div class="city">
+                <a class="city__item listarCity" [routerLink]="['/cidade']" routerLinkActive='active'>
+                    Listar Cidades
+                </a>
+                <a class="city__item criarCity" [routerLink]="['/cidade/novo']" routerLinkActive='active'>
+                    Cadastrar Cidade
+                </a>
+            </div>
+            <div class="client">
+                <a class="client__item listarClient" [routerLink]="['/cliente']" routerLinkActive='active'>
+                    Listar Clientes
+                </a>
+                <a class="client__item criarClient" [routerLink]="['/cliente/novo']" routerLinkActive='active'>
+                    Criar Cliente
+                </a>
+            </div>
+        </div>
+    </div>
+</header>

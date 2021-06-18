@@ -1,0 +1,51 @@
+<section>
+    <div>
+        <h1>
+            Listando Clientes
+        </h1>
+    </div>
+    <ng-template #elseBlock>
+        <div class="nocity">
+            Não há clientes para listar
+        </div>  
+    </ng-template>
+    <div *ngIf="clientes | async as clientes; else elseBlock">
+        <table>
+            <thead>
+                <tr>
+                    <th> ID </th>
+                    <th> Nome</th>
+                    <th> Sexo </th>
+                    <th> Idade </th>
+                    <th> Nascimento </th>
+                    <th> Cidade </th>
+                    <th> Ações </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of clientes">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.gender }}</td>
+                    <td>{{ item.age }}</td>
+                    <td>{{ item.born }}</td>
+                    <td>{{ item.city }}</td>
+
+                    <td>
+                        <div>
+                            <a class="button__edit" [routerLink]="['/cliente/editar', item.id]" routerLinkActive="router-link-active" >
+                                Editar
+                            </a>
+                            <button  class="button__delete" (click)="onDelete(item.id)">
+                                Deletar
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+</section>
+

@@ -1,0 +1,44 @@
+<section>
+    <div>
+        <h1>
+            Listando Cidades
+        </h1>
+    </div>
+    <ng-template #elseBlock>
+        <div class="nocity">
+            Não há cidades para listar
+        </div>  
+    </ng-template>
+    <div *ngIf="cidade | async as cidades; else elseBlock">
+        <table>
+            <thead>
+                <tr>
+                    <th> ID </th>
+                    <th> Nome da Cidade</th>
+                    <th> Estado </th>
+                    <th> Ações </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cidades">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.city }}</td>
+                    <td>{{ item.country }}</td>
+                    <td>
+                        <div>
+                            <a class="button__edit" [routerLink]="['/cidade/editar', item.id]" routerLinkActive="router-link-active" >
+                                Editar
+                            </a>
+                            <button  class="button__delete" (click)="onDelete(item.id)">
+                                Deletar
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
+</section>
+

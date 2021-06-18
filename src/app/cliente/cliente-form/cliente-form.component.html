@@ -1,0 +1,18 @@
+<form class="form" [formGroup]="form">
+    <input type="hidden" name="id" formControlName="id" [ngClass]="{'is-invalid': submitted && hasError('id')}">
+    <div class="form__container">
+        <input type="text" placeholder="Nome" name="name" formControlName="name" [ngClass]="{'is-invalid': submitted && hasError('name')}">
+        <input type="text" placeholder="Sexo" name="gender" formControlName="gender" [ngClass]="{'is-invalid': submitted && hasError('gender')}">
+    </div>
+    <div class="form__container">
+        <input type="text" placeholder="Data de Nascimento" name="born" formControlName="born" [ngClass]="{'is-invalid': submitted && hasError('born')}">
+        <input type="text" placeholder="Cidade" name="city" formControlName="city" [ngClass]="{'is-invalid': submitted && hasError('city')}">
+    </div>
+    <div class="form__container">
+        <input type="text" placeholder="Idade" name="age" formControlName="age" [ngClass]="{'is-invalid': submitted && hasError('age')}">
+    </div>
+    <div class="form__footer">
+        <button type="submit" class="enviar" (click)="onSubmit()">Enviar</button>
+        <button type="button" class="cancel" (click)="onCancel()">Limpar</button>
+    </div>
+</form>

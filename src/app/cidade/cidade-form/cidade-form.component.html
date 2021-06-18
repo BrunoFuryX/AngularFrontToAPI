@@ -1,0 +1,11 @@
+<form class="form" [formGroup]="form">
+    <input type="hidden" name="id" formControlName="id" [ngClass]="{'is-invalid': submitted && hasError('id')}">
+    <div class="form__container">
+        <input type="text" placeholder="Nome da Cidade" name="city" formControlName="city" [ngClass]="{'is-invalid': submitted && hasError('city')}">
+        <input type="text" placeholder="Nome do Estado" name="country" formControlName="country" [ngClass]="{'is-invalid': submitted && hasError('country')}">
+    </div>
+    <div class="form__footer">
+        <button type="submit" class="enviar" (click)="onSubmit()">Enviar</button>
+        <button type="button" class="cancel" (click)="onCancel()">Limpar</button>
+    </div>
+</form>
